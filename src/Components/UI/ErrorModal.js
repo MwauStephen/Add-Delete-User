@@ -5,15 +5,15 @@ import styles from "./ErrorModal.css";
 
 const ErrorModal = (props) => {
   <Fragment>
-    <div />
-    <Card>
-      <header>
+    <div className={styles.backdrop} />
+    <Card className={styles.modal}>
+      <header className={styles.header}>
         <h2>{props.title}</h2>
       </header>
-      <div>
+      <div className={styles.content}>
         <p>{props.message}</p>
       </div>
-      <footer>
+      <footer className={styles.actions}>
         <Button>Okay</Button>
       </footer>
     </Card>
