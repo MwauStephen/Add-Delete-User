@@ -10,8 +10,8 @@ const AddUser = () => {
       <input id="username" type="text" />
       <label htmlFor="age">Age(Years)</label>
       <input id="age" type="number" />
-      <button>Add user</button>
-      <button>Delete user</button>
+      <button type="submit">Add user</button>
+      <button type="button">Delete user</button>
     </form>
   );
 };
