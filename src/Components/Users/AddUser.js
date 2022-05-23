@@ -8,6 +8,9 @@ const AddUser = (props) => {
   const [enteredUserName, setEnteredUserName] = useState("");
   const [enteredUserAge, setEnteredUserAge] = useState("");
 
+  //   state renders modal conditionally
+  const [error, setError] = useState();
+
   //   form submission handler
   const addUserHandler = (event) => {
     event.preventDefault();
@@ -17,10 +20,16 @@ const AddUser = (props) => {
       enteredUserName.trim().length === 0 ||
       enteredUserAge.trim().length === 0
     ) {
-      return;
+      setError({
+        title: "Invalid input",
+        message: "Please enter a valid name and age(non-empty value)",
+      });
     }
     if (+enteredUserAge < 0) {
-      return;
+      setError({
+        title: "Invalid age input",
+        message: "Please enter a valid age(age >0)",
+      });
     }
     // lifiting state up
 
