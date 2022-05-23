@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
+import ErrorModal from "../UI/ErrorModal";
 import styles from "./AddUser.module.css";
 
 const AddUser = (props) => {
@@ -44,6 +45,7 @@ const AddUser = (props) => {
 
   return (
     <Fragment>
+      <ErrorModal title="An error ocurred" message="Somnething went wrong" />
       <Card className={styles.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">UserName</label>
