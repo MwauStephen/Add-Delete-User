@@ -52,9 +52,20 @@ const AddUser = (props) => {
     setEnteredUserAge(event.target.value);
   };
 
+  //   close error modal handler
+  const closeModalHandler = () => {
+    setError(null);
+  };
+
   return (
     <Fragment>
-      {error && <ErrorModal title={error.title} message={error.message} />}
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onCloseErrorModal={closeModalHandler}
+        />
+      )}
       <Card className={styles.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">UserName</label>
