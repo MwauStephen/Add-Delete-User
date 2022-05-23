@@ -6,14 +6,19 @@ import styles from "./AddUser.module.css";
 const AddUser = () => {
   const [enteredUserName, setEnteredUserName] = useState("");
   const [enteredUserAge, setEnteredUserAge] = useState("");
+
+  //   form submission handler
   const addUserHandler = (event) => {
     event.preventDefault();
     console.log(enteredUserName, enteredUserAge);
   };
 
+  //   username handler
   const userNameChangeHandler = (event) => {
     setEnteredUserName(event.target.value);
   };
+
+  //   age handler
   const userAgeChangeHandler = (event) => {
     setEnteredUserAge(event.target.value);
   };
