@@ -4,9 +4,12 @@ import UsersList from "./Components/Users/UsersList";
 
 function App() {
   const [usersList, setUsersList] = useState([]);
+
+  // lifting state up through props
+  const addUserHandler = () => {};
   return (
     <div>
-      <AddUser />
+      <AddUser onAddUser={addUserHandler} />
       <UsersList users={usersList} />
     </div>
   );
