@@ -21,6 +21,10 @@ const AddUser = (props) => {
     if (+enteredUserAge < 0) {
       return;
     }
+    // lifiting state up
+
+    props.onAddUser(enteredUserName, enteredUserAge);
+
     // clearing inputs
     setEnteredUserName("");
     setEnteredUserAge("");
