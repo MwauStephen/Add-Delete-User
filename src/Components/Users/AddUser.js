@@ -10,7 +10,10 @@ const AddUser = () => {
   //   form submission handler
   const addUserHandler = (event) => {
     event.preventDefault();
-    console.log(enteredUserName, enteredUserAge);
+
+    // clearing inputs
+    setEnteredUserName("");
+    setEnteredUserAge("");
   };
 
   //   username handler
@@ -27,9 +30,19 @@ const AddUser = () => {
     <Card className={styles.input}>
       <form onSubmit={addUserHandler}>
         <label htmlFor="username">UserName</label>
-        <input id="username" type="text" onChange={userNameChangeHandler} />
+        <input
+          id="username"
+          type="text"
+          onChange={userNameChangeHandler}
+          value={enteredUserName}
+        />
         <label htmlFor="age">Age(Years)</label>
-        <input id="age" type="number" onChange={userAgeChangeHandler} />
+        <input
+          id="age"
+          type="number"
+          onChange={userAgeChangeHandler}
+          value={enteredUserAge}
+        />
         <Button type="submit">Add user</Button>
         <Button type="button">Delete user</Button>
       </form>
