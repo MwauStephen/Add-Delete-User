@@ -11,9 +11,21 @@ const AddUser = () => {
   const addUserHandler = (event) => {
     event.preventDefault();
 
+    // adding form validation
+    if (
+      enteredUserName.trim().length === 0 ||
+      enteredUserAge.trim().length === 0
+    ) {
+      return;
+    }
+    if (+enteredUserAge < 0) {
+      return;
+    }
     // clearing inputs
     setEnteredUserName("");
     setEnteredUserAge("");
+
+    console.log(enteredUserAge, enteredUserName);
   };
 
   //   username handler
