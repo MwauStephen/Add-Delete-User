@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Card from "./Card";
 import Button from "./Button";
+import styles from "./ErrorModal.css";
 
 const ErrorModal = (props) => {
   <Fragment>
